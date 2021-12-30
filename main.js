@@ -6,6 +6,7 @@ const handOptions = {
 
 let SCORE = 0;
 
+    //hide "hands" show "contest"
 const pickUserHand = (hand) => {
     let hands = document.querySelector(".hands");
     hands.style.display = "none";
@@ -19,6 +20,7 @@ const pickUserHand = (hand) => {
     pickComputerHand(hand);
 };
 
+    //getting cpu hand
 const pickComputerHand = (hand) => {
     let hands = ["rock", "paper", "scissors",];
     let cpHand = hands[Math.floor(Math.random() * hands.length)];
@@ -29,6 +31,8 @@ const pickComputerHand = (hand) => {
     referee(hand, cpHand);
 };
 
+    //picking winner/looser
+    //change score
 const referee = (userHand, cpHand) => {
     if (userHand == "paper" && cpHand == "scissors") {
         setDecision("YOU LOSE!");
@@ -78,6 +82,7 @@ const referee = (userHand, cpHand) => {
 
 };
 
+    //show "hands"  hide "contest"
 const restartGame = () => {
     let contest = document.querySelector(".contest");
     contest.style.display = "none";
@@ -90,6 +95,7 @@ const setDecision = (decision) => {
     document.querySelector(".decision h1").innerText = decision;
 }
 
+    //score = new score
 const setScore = (newScore) => {
     SCORE = newScore;
     document.querySelector(".score h1").innerText = newScore;
